@@ -1,59 +1,27 @@
-# Indumentaria
+# Trabajo Final Seminario Angular 2025
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+---
 
-## Development server
+## Estudiante
 
-To start a local development server, run:
+- Agustina Quinteros   
+- 43.056.949  
+- 21agustinaa@gmail.com  
+- Tandil
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+##Tematica del proyecto
 
-## Code scaffolding
+El proyecto consiste en el desarrollo de una aplicación web de **indumentaria**. El objetivo es mostrar un catálogo de productos, permitir la interacción mediante formularios y consumir datos de una API externa.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Ruteo:** Dos secciones principales con rutas distintas, catálogo de productos (/productos) y contacto(/about).
+- **Componentes:** Cada página está compuesta por múltiples componentes para modularizar la aplicación.
+- **Directivas:** Se emplean directivas estructurales `*ngFor` y `*ngIf` para controlar la visualización dinámica de listas y condicionales.
+- **Comunicación entre componentes:** Implementada a través de servicios compartidos y también mediante `@Input` y `@Output`.
+- **Carrito de Compras:** Se implementó un carrito que permite agregar productos desde el catálogo. El carrito mantiene el estado de los productos seleccionados y los muestra al usuario. Los productos se obtienen mediante un `GET` consumiendo la API externa.
+- **Consumo de API externa:** Tanto la obtención de productos (`GET`) como el envío del formulario de contacto (`POST`) utilizan una API externa simulada mediante MockAPI.
+- **Formulario Reactivo:** El formulario de contacto cuenta con validaciones en tiempo real, implementado con Reactive Forms.
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
