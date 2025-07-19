@@ -11,7 +11,7 @@
 
 ---
 
-##Tematica del proyecto
+## Tematica del proyecto
 
 El proyecto consiste en el desarrollo de una aplicación web de **indumentaria**. El objetivo es mostrar un catálogo de productos, permitir la interacción mediante formularios y consumir datos de una API externa.
 
