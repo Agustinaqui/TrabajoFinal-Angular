@@ -1,0 +1,65 @@
+body{
+    background: #f883d1;
+  
+    font-family:'Quicksand', sans-serif;
+}
+h1{
+    color: rgb(161, 20, 107);
+}
+.centro, footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+p{
+    justify-content: center;
+}
+.nav-left{
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+}
+
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-nav {
+
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-between;
+    
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.202);
+    color: white;
+    backdrop-filter: blur(8px);    
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);                // efecto glass
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.355);  // sombra difusa hacia abajo
+  }
+.container-nav p{
+    margin-bottom: 0;
+}
+  
+.nav-pills .nav-link {
+    background-color: #f2b5db;
+    color: #951f67;
+    font-weight:bolder;
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #b8769d;
+    color: #f2b5db;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #951f67;
+    color: #f2b5db;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.355);
+  }
+  

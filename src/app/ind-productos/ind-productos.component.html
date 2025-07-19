@@ -1,0 +1,10 @@
+<div class="row">
+    <div [class.col-12]="!hayProductosCargados" [class.col-8]="hayProductosCargados">
+      <app-indumentaria-list></app-indumentaria-list>
+    </div>
+
+    <div class="col-4" *ngIf="hayProductosCargados">
+      <app-ind-carrito ></app-ind-carrito>
+    </div>  
+</div>
+

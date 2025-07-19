@@ -1,0 +1,55 @@
+
+<table class="table text-center">
+    <thead class="text-white" style="background-color: #7805f4;">
+        <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Compra</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: #C499F3;" *ngFor="let producto of productos" [ngClass]="{'sale' : producto.sale}">
+            <td><img [width]="100" [src]="producto.image" [alt]="producto.nombre" class="img-producto" > </td>
+            <td>{{producto.nombre}}</td>
+            <td [innerHTML]="producto.descripcion">{{producto.descripcion}}</td>
+            <td class="text-success fw-bold">
+                <ng-container *ngIf="producto.sale && producto.descuento; else precioNormal">
+                    <span class="text-muted text-decoration-line-through">
+                    {{ producto.precio | currency:'ARS' }}
+                    </span>
+                    <span class="ms-2">
+                    {{ (producto.precio * (1 - producto.descuento / 100)) | currency:'ARS' }}
+                    </span>
+                </ng-container>
+                <ng-template #precioNormal>
+                    {{ producto.precio | currency:'ARS' }}
+                </ng-template>
+            </td>
+            <td>
+                
+                <span *ngIf="producto.stock === 0">Sin stock</span>
+            </td>
+            <td class="mb-2">
+                <app-input-integer class="text-center"
+                    [(cantidad)]="producto.cantidad"
+                    [max]="producto.stock"
+                    [producto]="producto"
+                    *ngIf="producto.stock"
+                    (maxReached)="maxReached($event)"
+                    (cantidadDisminuida)="ocultarMensajeStock(producto)">
+                </app-input-integer> 
+                 <div *ngIf="producto.maxAlcanzado" class="mensaje-stock">
+                    Se alcanzó el stock disponible!
+                </div>
+                <button *ngIf="producto.stock > 0"
+                        class="btn fw-bold text-white"
+                        style="background-color: #951f67;"
+                        (click)="addToCart(producto)">Comprar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Contacto</h2>
+
+  <div *ngIf="mensajeEnviado" class="alert alert-success" role="alert">
+    ¡Mensaje enviado con éxito!
+  </div>
+
+  <div *ngIf="errorEnvio" class="alert alert-danger" role="alert">
+    Ocurrió un error al enviar el mensaje. Intentá nuevamente.
+  </div>
+
+  <form [formGroup]="contactoForm" (ngSubmit)="enviar()" novalidate>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': contactoForm.get('nombre')?.invalid && contactoForm.get('nombre')?.touched }"
+        formControlName="nombre"
+      />
+      <div class="invalid-feedback" *ngIf="contactoForm.get('nombre')?.hasError('required')">
+        El nombre es obligatorio.
+      </div>
+      <div class="invalid-feedback" *ngIf="contactoForm.get('nombre')?.hasError('minlength')">
+        Debe tener al menos 3 caracteres.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': contactoForm.get('email')?.invalid && contactoForm.get('email')?.touched }"
+        formControlName="email"
+      />
+      <div class="invalid-feedback" *ngIf="contactoForm.get('email')?.hasError('required')">
+        El email es obligatorio.
+      </div>
+      <div class="invalid-feedback" *ngIf="contactoForm.get('email')?.hasError('email')">
+        Debe ser un email válido.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="mensaje" class="form-label">Mensaje</label>
+      <textarea
+        id="mensaje"
+        rows="5"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': contactoForm.get('mensaje')?.invalid && contactoForm.get('mensaje')?.touched }"
+        formControlName="mensaje"
+      ></textarea>
+      <div class="invalid-feedback" *ngIf="contactoForm.get('mensaje')?.hasError('required')">
+        El mensaje es obligatorio.
+      </div>
+      <div class="invalid-feedback" *ngIf="contactoForm.get('mensaje')?.hasError('minlength')">
+        Debe tener al menos 10 caracteres.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+

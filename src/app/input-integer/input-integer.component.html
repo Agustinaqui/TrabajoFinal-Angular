@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center align-items-center" style="gap: 0.25rem; margin: auto;">
+  <button class="btn btn-sm text-white px-2" style="background-color: #951f67;" type="button" (click)="downCantidad()">-</button>
+
+  <input
+    type="text"
+    class="form-control text-center"
+    style="width: 50px; padding: 0.2rem;"
+    [(ngModel)]="cantidad"
+    (keyup)="ChangeCantidad($event)"
+  >
+
+  <button class="btn btn-sm text-white px-2" style="background-color: #951f67;" type="button" (click)="upCantidad()">+</button>
+</div>
+
